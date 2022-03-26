@@ -16,7 +16,7 @@ def load(command, path):
     return subprocess.run(
         ["/media/fat/tatsutron/mbc", "load_rom", command, path],
         stderr=subprocess.PIPE,
-	    stdout=subprocess.PIPE,
+        stdout=subprocess.PIPE,
     ).stdout
 
 
