@@ -46,7 +46,7 @@ def play():
     file.set("index", request.json["index"])
     file.set("path", request.json["path"])
     file.set("type", request.json["type"])
-    with open("temp.mgl", "w") as file:
+    with open("/media/fat/tatsutron/temp.mgl", "w") as file:
         ElementTree(root).write(file, encoding='unicode')
     with open("/dev/MiSTer_cmd", "w") as file:
         file.write("load_core /media/fat/tatsutron/temp.mgl")
