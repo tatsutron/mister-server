@@ -50,7 +50,6 @@ def play():
         ElementTree(root).write(file, encoding='unicode')
     with open("/dev/MiSTer_cmd", "w") as file:
         file.write("load_core /media/fat/tatsutron/temp.mgl")
-    os.remove("temp.mgl")
 
 
 run(host='0.0.0.0', port=8080, debug=True)
