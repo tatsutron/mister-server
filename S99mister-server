@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/bin/python3 /media/fat/tatsutron/mister-server/server.py
+
