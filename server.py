@@ -33,7 +33,7 @@ def hash(header_size, path):
 @route("/load/<command>/<path:path>")
 def load(command, path):
     return subprocess.run(
-        [f"${ROOT}/mbc", "load_rom", command, path],
+        [f"{ROOT}/mbc", "load_rom", command, path],
         stderr=subprocess.PIPE,
         stdout=subprocess.PIPE,
     ).stdout
@@ -52,7 +52,7 @@ def play():
     with open(f"{ROOT}/temp.mgl", "w") as file:
         ElementTree(root).write(file, encoding='unicode')
     with open("/dev/MiSTer_cmd", "w") as file:
-        file.write(f"load_core ${ROOT}/temp.mgl")
+        file.write(f"load_core {ROOT}/temp.mgl")
 
 
 run(host='0.0.0.0', port=8080, debug=True)
