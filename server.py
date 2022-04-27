@@ -11,10 +11,12 @@ def scan(extensions, path):
     entries = []
     with os.scandir(path) as it:
         for entry in it:
-            if entry.is_dir():
+            root, extension = os.path.splitext(entry.path)
+            if os.path.basename(root).startswith("."):
+                pass
+            elif entry.is_dir():
                 entries.append(os.path.join(entry.path, ""))
             else:
-                name, extension = os.path.splitext(entry.path)
                 if extension[1:] in extensions.split("|"):
                     entries.append(entry.path)
     return json.dumps(entries)
